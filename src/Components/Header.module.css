@@ -1,0 +1,26 @@
+header {
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+  position: absolute;
+  color: white;
+  padding-left: 1rem;
+}
+.logo {
+  width: 6rem;
+  height: 100%;
+}
+nav ul {
+  display: flex;
+  gap: 3rem;
+  /* font-size: 1rem; */
+  font-weight: 600;
+}
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: black;
+  color: white;
+}

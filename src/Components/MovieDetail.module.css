@@ -1,0 +1,25 @@
+.detail {
+  color: white;
+  display: grid;
+
+  /* display: block; */
+  /* display: grid; */
+
+  grid-template-columns: 500px 900px;
+  padding: 0 40px;
+  gap: 2rem;
+
+  height: 100%;
+
+  position: absolute;
+  top: 30rem;
+  left: 0;
+}
+
+.detail img {
+  width: 22rem;
+}
+
+.description {
+  padding-right: 5rem;
+}

@@ -1,0 +1,36 @@
+.img {
+  display: flex;
+}
+
+.detail {
+  color: white;
+  display: grid;
+
+  /* display: block; */
+  /* display: grid; */
+
+  grid-template-columns: 500px 900px;
+  padding: 0 40px;
+  gap: 2rem;
+}
+
+.detail img {
+  width: 22rem;
+}
+
+.description {
+  padding-right: 5rem;
+}
+
+.img img {
+  width: 15rem;
+  border-radius: 5px;
+  object-fit: cover;
+  gap: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.img img:hover {
+  transform: scale(2.5);
+}
