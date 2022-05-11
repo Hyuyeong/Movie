@@ -1,0 +1,70 @@
+.img {
+  display: flex;
+  gap: 1rem;
+}
+
+.detail {
+  color: white;
+  display: grid;
+
+  /* display: block; */
+  /* display: grid; */
+
+  grid-template-columns: 18rem 50rem;
+  padding: 0 40px;
+  gap: 2rem;
+}
+
+.detail img {
+  width: 18rem;
+}
+
+.description {
+  padding-right: 5rem;
+  font-size: 1rem;
+  font-weight: normal;
+  text-transform: none;
+  position: relative;
+}
+
+.description h2 {
+  margin-top: 0;
+}
+
+.img img {
+  width: 10rem;
+  border-radius: 7px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.img img:hover {
+  transform: scale(1.2);
+  transition: all 1s;
+}
+
+.genre {
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1180px) {
+  .genre {
+    font-size: 1.4rem;
+  }
+}
+
+.closeBtn svg {
+  width: 1.2rem;
+  padding: 0.2rem 0;
+  color: rgb(0, 0, 0);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 0;
+  right: -2.07rem;
+  border: 1px solid black;
+  background-color: white;
+}

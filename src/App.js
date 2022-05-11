@@ -1,84 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import Header from './Components/Layout/Header';
-import Menu from './Components/Layout/Menu';
+import styles from './App.module.css';
 
-import Movies from './Components/Movies';
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './routes/Home';
-import Detail from './routes/Detail';
+import Main from './Components/Main';
+import Header from './Components/Header';
+import RomanceMovie from './Components/RomanceMovie';
+import ComedyMovie from './Components/ComedyMovie';
+import FamilyMovie from './Components/FamilyMovie';
+import DocumentaryMovie from './Components/DocumentaryMovie';
+import ThrillerMovie from './Components/ThrillerMovie';
+import HorrorMovie from './Components/HorrorMovie';
+import TopRatingMovie from './Components/TopRatingMovie';
+import ActionMovie from './Components/ActionMovie';
+import AnimationMovie from './Components/AnimationMovie';
 
 function App() {
-  // const [index, setIndex] = useState('0');
+  const [loading, setLoading] = useState(true);
+  const [movies, setMovies] = useState([]);
 
-  // const handler = e => {
-  //   setIndex(e.target.value);
-  // };
+  const getMovies = async function () {
+    try {
+      const res = await fetch(`https://yts.mx/api/v2/list_movies.json?`);
 
-  // console.log(index);
+      const json = await res.json();
+
+      setMovies(json.data.movies);
+
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getMovies();
+  }, []);
+
+  // console.log(movies);
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/movie/:id" element={<Detail />} /> */}
-      </Routes>
-    </Router>
-  );
-}
-
-// <div>
-//   <Movies />
-//   {/* <select value={index} onChange={handler}>
-//     <option value="xx">select</option>
-//     <option value="1">Minute to Hour</option>
-//     <option value="2"> Km to miles</option>
-//   </select>
-
-//   {index === '1' ? <MintoHour /> : null}
-//   {index === '2' ? <KmToMile /> : null} */}
-// </div>
-
-/*
-function App() {
-  const [memuIsShown, setMenuIsShown] = useState(true);
-
-  const showmenuHandler = () => {
-    setMenuIsShown(false);
-  };
-
-  const hideMenuHandler = () => {
-    setMenuIsShown(false);
-
-    // console.log('clicked!!');
-  };
-
-  const [coffeeIsShown, setcoffeeIsShown] = useState(true);
-
-  // const showcoffeeHandler = () => {
-  //   setcoffeeIsShown(true);
-  // };
-
-  const hidecoffeeHandler = () => {
-    setcoffeeIsShown(false);
-
-    // console.log('clicked!!');
-  };
-
-  return (
-    <div className="App">
-      <Header
-        onClose={hideMenuHandler}
-        // onShow={showmenuHandler}
-        // onCloseCoffee={hidecoffeeHandler}
-        // onShowCoffee={showcoffeeHandler}
-      />
-      {memuIsShown || <Menu />}
-      {coffeeIsShown || <CoffeeAtHome />}
-       {setMenuIsShown && <Menu onClose={hideMenuHandler} />} }
+    <div>
+      {loading ? (
+        <h1 className={styles.loading}>Loading...</h1>
+      ) : (
+        <div>
+          <Header />
+          <Main />
+          <TopRatingMovie />
+          <RomanceMovie />
+          <ComedyMovie />
+          <ActionMovie />
+          <FamilyMovie />
+          <DocumentaryMovie />
+          <ThrillerMovie />
+          <HorrorMovie />
+          <AnimationMovie />
+        </div>
+      )}
     </div>
   );
 }
-*/
+
 export default App;
