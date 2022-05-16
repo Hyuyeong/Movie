@@ -1,13 +1,14 @@
-import MovieSeed from './MovieSeed';
+import Movie from './Movie';
 
 const AnimationMovie = () => {
   const movie = {
     rating: 8.0,
     genre: 'animation',
     sort: 'year',
+    limit: 20,
   };
 
-  return <MovieSeed onMovie={movie} />;
+  return <Movie onMovie={movie} />;
 };
 
 export default AnimationMovie;

@@ -1,4 +1,4 @@
-import MovieSeed from './MovieSeed';
+import Movie from './Movie';
 
 const HorrorMovie = ({}) => {
   const movie = {
@@ -7,6 +7,6 @@ const HorrorMovie = ({}) => {
     sort: 'year',
   };
 
-  return <MovieSeed onMovie={movie} />;
+  return <Movie onMovie={movie} />;
 };
 export default HorrorMovie;

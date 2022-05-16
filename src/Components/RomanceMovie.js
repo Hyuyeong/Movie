@@ -1,4 +1,4 @@
-import MovieSeed from './MovieSeed';
+import Movie from './Movie';
 const RomanceMovie = () => {
   const movie = {
     rating: 8.0,
@@ -6,6 +6,6 @@ const RomanceMovie = () => {
     sort: 'year',
   };
 
-  return <MovieSeed onMovie={movie} />;
+  return <Movie onMovie={movie} />;
 };
 export default RomanceMovie;

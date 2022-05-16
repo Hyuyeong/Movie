@@ -1,12 +1,13 @@
-import MovieSeed from './MovieSeed';
+import Movie from './Movie';
 
 const ThrillerMovie = () => {
   const movie = {
     rating: 8.0,
     genre: 'thriller',
     sort: 'year',
+    limit: 20,
   };
 
-  return <MovieSeed onMovie={movie} />;
+  return <Movie onMovie={movie} />;
 };
 export default ThrillerMovie;

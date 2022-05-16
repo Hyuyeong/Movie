@@ -1,4 +1,4 @@
-import MovieSeed from './MovieSeed';
+import Movie from './Movie';
 
 const TopRatingMovie = ({}) => {
   const movie = {
@@ -6,8 +6,9 @@ const TopRatingMovie = ({}) => {
     genre: '',
     sort: 'year',
     category: 'Top Rating',
+    limit: 20,
   };
 
-  return <MovieSeed onMovie={movie} />;
+  return <Movie onMovie={movie} />;
 };
 export default TopRatingMovie;
